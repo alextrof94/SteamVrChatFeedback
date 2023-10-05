@@ -475,7 +475,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form1";
-            Text = "SteamVrTwitchChatFeedback by GoodVrGames aka alextrof94";
+            Text = "SteamVrChatFeedback by GoodVrGames aka alextrof94";
             Shown += Form1_Shown;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
