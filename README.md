@@ -31,6 +31,10 @@ I understand english text, so you can also visit my [channel](https://www.twitch
 Also you can customize haptic-template by changing "HapticAnimations.json" in folder with app.
 <br>Шаблоны вибраций также можно кастомизировать, если есть понимание JSON. Файл "HapticAnimations.json" в папке с приложением.
 
+
+This is a completely rewritten OpenVRChatHapticFeedback application from scratch. Less unnecessary code. More understanding of how it should work.
+<br>Это полностью с нуля переписанное приложение OpenVRChatHapticFeedback. Меньше лишнего кода. Больше понимания, как должно работать.
+
 ## Thanks 
 [Dteyn](https://github.com/Dteyn)
 
