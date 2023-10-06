@@ -1,7 +1,7 @@
 # SteamVrChatFeedback
 **English included**
 
-You can download app [there](https://turnlive.ru/apps/SteamVrChatFeedback.zip).
+You can download app [here](https://turnlive.ru/apps/SteamVrChatFeedback.zip).
 
 ![Looks like](https://github.com/alextrof94/SteamVrChatFeedback/blob/main/Images/main.png)
 
