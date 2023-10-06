@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             BuDonate = new Button();
-            BuVrConnected = new Button();
+            BuVrStatus = new Button();
             groupBox1 = new GroupBox();
             label1 = new Label();
             TbTwChannelName = new TextBox();
             BuTwConnect = new Button();
             groupBox2 = new GroupBox();
-            BuTestVibro = new Button();
+            label4 = new Label();
+            TbHapticForce = new TrackBar();
+            BuTestHaptic = new Button();
             BuOpenJson = new Button();
-            CbVibroName = new ComboBox();
+            CbHapticAnimations = new ComboBox();
             label3 = new Label();
             CbController = new ComboBox();
             label2 = new Label();
@@ -61,147 +65,147 @@
             CbHideToTray = new CheckBox();
             CbStartWithSteamVR = new CheckBox();
             groupBox4 = new GroupBox();
+            BuVrL = new Button();
+            BuVrR = new Button();
             LlOpenGithub = new LinkLabel();
+            TiTwCheckExpired = new System.Windows.Forms.Timer(components);
+            TtHint = new ToolTip(components);
+            TimerCheckForVR = new System.Windows.Forms.Timer(components);
+            TimerCheckForControllers = new System.Windows.Forms.Timer(components);
+            NiMain = new NotifyIcon(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TbHapticForce).BeginInit();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // BuDonate
             // 
+            resources.ApplyResources(BuDonate, "BuDonate");
             BuDonate.BackColor = Color.LawnGreen;
-            BuDonate.Location = new Point(62, 72);
             BuDonate.Name = "BuDonate";
-            BuDonate.Size = new Size(75, 23);
-            BuDonate.TabIndex = 0;
-            BuDonate.Text = "DONATE";
+            TtHint.SetToolTip(BuDonate, resources.GetString("BuDonate.ToolTip"));
             BuDonate.UseVisualStyleBackColor = false;
             BuDonate.Click += BuDonate_Click;
             // 
-            // BuVrConnected
+            // BuVrStatus
             // 
-            BuVrConnected.BackColor = Color.LightPink;
-            BuVrConnected.Enabled = false;
-            BuVrConnected.Location = new Point(210, 44);
-            BuVrConnected.Name = "BuVrConnected";
-            BuVrConnected.Size = new Size(87, 23);
-            BuVrConnected.TabIndex = 1;
-            BuVrConnected.Text = "Статус VR";
-            BuVrConnected.UseVisualStyleBackColor = false;
+            resources.ApplyResources(BuVrStatus, "BuVrStatus");
+            BuVrStatus.BackColor = Color.LightPink;
+            BuVrStatus.Name = "BuVrStatus";
+            BuVrStatus.TabStop = false;
+            TtHint.SetToolTip(BuVrStatus, resources.GetString("BuVrStatus.ToolTip"));
+            BuVrStatus.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(TbTwChannelName);
             groupBox1.Controls.Add(BuTwConnect);
-            groupBox1.Location = new Point(12, 118);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(303, 84);
-            groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Twitch";
+            TtHint.SetToolTip(groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 25);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new Size(43, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Канал:";
+            TtHint.SetToolTip(label1, resources.GetString("label1.ToolTip"));
             // 
             // TbTwChannelName
             // 
-            TbTwChannelName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TbTwChannelName.Location = new Point(55, 22);
+            resources.ApplyResources(TbTwChannelName, "TbTwChannelName");
             TbTwChannelName.Name = "TbTwChannelName";
-            TbTwChannelName.Size = new Size(242, 23);
-            TbTwChannelName.TabIndex = 1;
+            TtHint.SetToolTip(TbTwChannelName, resources.GetString("TbTwChannelName.ToolTip"));
             // 
             // BuTwConnect
             // 
-            BuTwConnect.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            BuTwConnect.Location = new Point(6, 51);
+            resources.ApplyResources(BuTwConnect, "BuTwConnect");
+            BuTwConnect.BackColor = Color.LightPink;
             BuTwConnect.Name = "BuTwConnect";
-            BuTwConnect.Size = new Size(291, 23);
-            BuTwConnect.TabIndex = 0;
-            BuTwConnect.Text = "Подключить";
-            BuTwConnect.UseVisualStyleBackColor = true;
+            TtHint.SetToolTip(BuTwConnect, resources.GetString("BuTwConnect.ToolTip"));
+            BuTwConnect.UseVisualStyleBackColor = false;
+            BuTwConnect.Click += BuTwConnect_Click;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(BuTestVibro);
+            resources.ApplyResources(groupBox2, "groupBox2");
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(TbHapticForce);
+            groupBox2.Controls.Add(BuTestHaptic);
             groupBox2.Controls.Add(BuOpenJson);
-            groupBox2.Controls.Add(CbVibroName);
+            groupBox2.Controls.Add(CbHapticAnimations);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(CbController);
             groupBox2.Controls.Add(label2);
-            groupBox2.Location = new Point(12, 208);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(303, 108);
-            groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Вибрация";
+            TtHint.SetToolTip(groupBox2, resources.GetString("groupBox2.ToolTip"));
             // 
-            // BuTestVibro
+            // label4
             // 
-            BuTestVibro.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            BuTestVibro.Location = new Point(6, 79);
-            BuTestVibro.Name = "BuTestVibro";
-            BuTestVibro.Size = new Size(291, 23);
-            BuTestVibro.TabIndex = 5;
-            BuTestVibro.Text = "Тест";
-            BuTestVibro.UseVisualStyleBackColor = true;
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
+            TtHint.SetToolTip(label4, resources.GetString("label4.ToolTip"));
+            // 
+            // TbHapticForce
+            // 
+            resources.ApplyResources(TbHapticForce, "TbHapticForce");
+            TbHapticForce.Maximum = 255;
+            TbHapticForce.Name = "TbHapticForce";
+            TbHapticForce.TickFrequency = 20;
+            TtHint.SetToolTip(TbHapticForce, resources.GetString("TbHapticForce.ToolTip"));
+            TbHapticForce.Value = 1;
+            TbHapticForce.Scroll += TbHapticForce_Scroll;
+            // 
+            // BuTestHaptic
+            // 
+            resources.ApplyResources(BuTestHaptic, "BuTestHaptic");
+            BuTestHaptic.Name = "BuTestHaptic";
+            TtHint.SetToolTip(BuTestHaptic, resources.GetString("BuTestHaptic.ToolTip"));
+            BuTestHaptic.UseVisualStyleBackColor = true;
+            BuTestHaptic.Click += BuTestHaptic_Click;
             // 
             // BuOpenJson
             // 
-            BuOpenJson.Location = new Point(234, 45);
+            resources.ApplyResources(BuOpenJson, "BuOpenJson");
             BuOpenJson.Name = "BuOpenJson";
-            BuOpenJson.Size = new Size(63, 23);
-            BuOpenJson.TabIndex = 4;
-            BuOpenJson.Text = "JSON";
+            TtHint.SetToolTip(BuOpenJson, resources.GetString("BuOpenJson.ToolTip"));
             BuOpenJson.UseVisualStyleBackColor = true;
             // 
-            // CbVibroName
+            // CbHapticAnimations
             // 
-            CbVibroName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            CbVibroName.FormattingEnabled = true;
-            CbVibroName.Location = new Point(99, 45);
-            CbVibroName.Name = "CbVibroName";
-            CbVibroName.Size = new Size(129, 23);
-            CbVibroName.TabIndex = 3;
+            resources.ApplyResources(CbHapticAnimations, "CbHapticAnimations");
+            CbHapticAnimations.FormattingEnabled = true;
+            CbHapticAnimations.Name = "CbHapticAnimations";
+            TtHint.SetToolTip(CbHapticAnimations, resources.GetString("CbHapticAnimations.ToolTip"));
+            CbHapticAnimations.SelectedIndexChanged += CbHapticAnimationNames_SelectedIndexChanged;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(6, 48);
+            resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
-            label3.Size = new Size(87, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Тип вибрации:";
+            TtHint.SetToolTip(label3, resources.GetString("label3.ToolTip"));
             // 
             // CbController
             // 
-            CbController.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            resources.ApplyResources(CbController, "CbController");
             CbController.FormattingEnabled = true;
-            CbController.Items.AddRange(new object[] { "Оба", "Левый", "Правый" });
-            CbController.Location = new Point(99, 16);
             CbController.Name = "CbController";
-            CbController.Size = new Size(198, 23);
-            CbController.TabIndex = 1;
+            TtHint.SetToolTip(CbController, resources.GetString("CbController.ToolTip"));
+            CbController.SelectedIndexChanged += CbController_SelectedIndexChanged;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 19);
+            resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
-            label2.Size = new Size(77, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Контроллер:";
+            TtHint.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // groupBox3
             // 
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(BuOpenWhiteList);
             groupBox3.Controls.Add(BuOpenIgnoreList);
             groupBox3.Controls.Add(CbMsgWhiteList);
@@ -216,271 +220,250 @@
             groupBox3.Controls.Add(CbMsgMod);
             groupBox3.Controls.Add(CbMsgCmds);
             groupBox3.Controls.Add(CbMsgAll);
-            groupBox3.Location = new Point(321, 12);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(301, 244);
-            groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Настройка оповещений";
+            TtHint.SetToolTip(groupBox3, resources.GetString("groupBox3.ToolTip"));
             // 
             // BuOpenWhiteList
             // 
-            BuOpenWhiteList.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            BuOpenWhiteList.Location = new Point(174, 186);
+            resources.ApplyResources(BuOpenWhiteList, "BuOpenWhiteList");
             BuOpenWhiteList.Name = "BuOpenWhiteList";
-            BuOpenWhiteList.Size = new Size(121, 23);
-            BuOpenWhiteList.TabIndex = 13;
-            BuOpenWhiteList.Text = "Белый список";
+            TtHint.SetToolTip(BuOpenWhiteList, resources.GetString("BuOpenWhiteList.ToolTip"));
             BuOpenWhiteList.UseVisualStyleBackColor = true;
             BuOpenWhiteList.Click += BuOpenWhiteList_Click;
             // 
             // BuOpenIgnoreList
             // 
-            BuOpenIgnoreList.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            BuOpenIgnoreList.Location = new Point(174, 215);
+            resources.ApplyResources(BuOpenIgnoreList, "BuOpenIgnoreList");
             BuOpenIgnoreList.Name = "BuOpenIgnoreList";
-            BuOpenIgnoreList.Size = new Size(121, 23);
-            BuOpenIgnoreList.TabIndex = 12;
-            BuOpenIgnoreList.Text = "Игнор лист";
+            TtHint.SetToolTip(BuOpenIgnoreList, resources.GetString("BuOpenIgnoreList.ToolTip"));
             BuOpenIgnoreList.UseVisualStyleBackColor = true;
             BuOpenIgnoreList.Click += BuOpenIgnoreList_Click;
             // 
             // CbMsgWhiteList
             // 
-            CbMsgWhiteList.AutoSize = true;
-            CbMsgWhiteList.Location = new Point(174, 72);
+            resources.ApplyResources(CbMsgWhiteList, "CbMsgWhiteList");
             CbMsgWhiteList.Name = "CbMsgWhiteList";
-            CbMsgWhiteList.Size = new Size(104, 19);
-            CbMsgWhiteList.TabIndex = 11;
             CbMsgWhiteList.Tag = "19";
-            CbMsgWhiteList.Text = "Белый список";
+            TtHint.SetToolTip(CbMsgWhiteList, resources.GetString("CbMsgWhiteList.ToolTip"));
             CbMsgWhiteList.UseVisualStyleBackColor = true;
             CbMsgWhiteList.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgSubmode
             // 
-            CbMsgSubmode.AutoSize = true;
-            CbMsgSubmode.Location = new Point(6, 122);
+            resources.ApplyResources(CbMsgSubmode, "CbMsgSubmode");
             CbMsgSubmode.Name = "CbMsgSubmode";
-            CbMsgSubmode.Size = new Size(204, 19);
-            CbMsgSubmode.TabIndex = 10;
             CbMsgSubmode.Tag = "4";
-            CbMsgSubmode.Text = "Сообщения в сабмоде за баллы";
+            TtHint.SetToolTip(CbMsgSubmode, resources.GetString("CbMsgSubmode.ToolTip"));
             CbMsgSubmode.UseVisualStyleBackColor = true;
             CbMsgSubmode.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgFirst
             // 
-            CbMsgFirst.AutoSize = true;
-            CbMsgFirst.Location = new Point(6, 222);
+            resources.ApplyResources(CbMsgFirst, "CbMsgFirst");
             CbMsgFirst.Name = "CbMsgFirst";
-            CbMsgFirst.Size = new Size(136, 19);
-            CbMsgFirst.TabIndex = 9;
             CbMsgFirst.Tag = "8";
-            CbMsgFirst.Text = "Первые сообщения";
+            TtHint.SetToolTip(CbMsgFirst, resources.GetString("CbMsgFirst.ToolTip"));
             CbMsgFirst.UseVisualStyleBackColor = true;
             CbMsgFirst.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgTurbo
             // 
-            CbMsgTurbo.AutoSize = true;
-            CbMsgTurbo.Location = new Point(6, 197);
+            resources.ApplyResources(CbMsgTurbo, "CbMsgTurbo");
             CbMsgTurbo.Name = "CbMsgTurbo";
-            CbMsgTurbo.Size = new Size(76, 19);
-            CbMsgTurbo.TabIndex = 8;
             CbMsgTurbo.Tag = "7";
-            CbMsgTurbo.Text = "От Турбо";
+            TtHint.SetToolTip(CbMsgTurbo, resources.GetString("CbMsgTurbo.ToolTip"));
             CbMsgTurbo.UseVisualStyleBackColor = true;
             CbMsgTurbo.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgPartner
             // 
-            CbMsgPartner.AutoSize = true;
-            CbMsgPartner.Location = new Point(6, 172);
+            resources.ApplyResources(CbMsgPartner, "CbMsgPartner");
             CbMsgPartner.Name = "CbMsgPartner";
-            CbMsgPartner.Size = new Size(101, 19);
-            CbMsgPartner.TabIndex = 7;
             CbMsgPartner.Tag = "6";
-            CbMsgPartner.Text = "От партнёров";
+            TtHint.SetToolTip(CbMsgPartner, resources.GetString("CbMsgPartner.ToolTip"));
             CbMsgPartner.UseVisualStyleBackColor = true;
             CbMsgPartner.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgHighlighted
             // 
-            CbMsgHighlighted.AutoSize = true;
-            CbMsgHighlighted.Location = new Point(6, 147);
+            resources.ApplyResources(CbMsgHighlighted, "CbMsgHighlighted");
             CbMsgHighlighted.Name = "CbMsgHighlighted";
-            CbMsgHighlighted.Size = new Size(163, 19);
-            CbMsgHighlighted.TabIndex = 6;
             CbMsgHighlighted.Tag = "5";
-            CbMsgHighlighted.Text = "Выделенные сообщения";
+            TtHint.SetToolTip(CbMsgHighlighted, resources.GetString("CbMsgHighlighted.ToolTip"));
             CbMsgHighlighted.UseVisualStyleBackColor = true;
             CbMsgHighlighted.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgVip
             // 
-            CbMsgVip.AutoSize = true;
-            CbMsgVip.Location = new Point(6, 97);
+            resources.ApplyResources(CbMsgVip, "CbMsgVip");
             CbMsgVip.Name = "CbMsgVip";
-            CbMsgVip.Size = new Size(68, 19);
-            CbMsgVip.TabIndex = 5;
             CbMsgVip.Tag = "3";
-            CbMsgVip.Text = "От ВИП";
+            TtHint.SetToolTip(CbMsgVip, resources.GetString("CbMsgVip.ToolTip"));
             CbMsgVip.UseVisualStyleBackColor = true;
             CbMsgVip.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgSub
             // 
-            CbMsgSub.AutoSize = true;
-            CbMsgSub.Location = new Point(6, 72);
+            resources.ApplyResources(CbMsgSub, "CbMsgSub");
             CbMsgSub.Name = "CbMsgSub";
-            CbMsgSub.Size = new Size(116, 19);
-            CbMsgSub.TabIndex = 4;
             CbMsgSub.Tag = "2";
-            CbMsgSub.Text = "От подписчиков";
+            TtHint.SetToolTip(CbMsgSub, resources.GetString("CbMsgSub.ToolTip"));
             CbMsgSub.UseVisualStyleBackColor = true;
             CbMsgSub.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgHey
             // 
-            CbMsgHey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            CbMsgHey.AutoSize = true;
-            CbMsgHey.Location = new Point(174, 47);
+            resources.ApplyResources(CbMsgHey, "CbMsgHey");
             CbMsgHey.Name = "CbMsgHey";
-            CbMsgHey.Size = new Size(48, 19);
-            CbMsgHey.TabIndex = 3;
             CbMsgHey.Tag = "10";
-            CbMsgHey.Text = "!hey";
+            TtHint.SetToolTip(CbMsgHey, resources.GetString("CbMsgHey.ToolTip"));
             CbMsgHey.UseVisualStyleBackColor = true;
             CbMsgHey.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgMod
             // 
-            CbMsgMod.AutoSize = true;
-            CbMsgMod.Location = new Point(6, 47);
+            resources.ApplyResources(CbMsgMod, "CbMsgMod");
             CbMsgMod.Name = "CbMsgMod";
-            CbMsgMod.Size = new Size(116, 19);
-            CbMsgMod.TabIndex = 2;
             CbMsgMod.Tag = "1";
-            CbMsgMod.Text = "От модераторов";
+            TtHint.SetToolTip(CbMsgMod, resources.GetString("CbMsgMod.ToolTip"));
             CbMsgMod.UseVisualStyleBackColor = true;
             CbMsgMod.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgCmds
             // 
-            CbMsgCmds.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            CbMsgCmds.AutoSize = true;
-            CbMsgCmds.Location = new Point(174, 22);
+            resources.ApplyResources(CbMsgCmds, "CbMsgCmds");
             CbMsgCmds.Name = "CbMsgCmds";
-            CbMsgCmds.Size = new Size(80, 19);
-            CbMsgCmds.TabIndex = 1;
             CbMsgCmds.Tag = "9";
-            CbMsgCmds.Text = "!Команды";
+            TtHint.SetToolTip(CbMsgCmds, resources.GetString("CbMsgCmds.ToolTip"));
             CbMsgCmds.UseVisualStyleBackColor = true;
             CbMsgCmds.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbMsgAll
             // 
-            CbMsgAll.AutoSize = true;
-            CbMsgAll.Location = new Point(6, 22);
+            resources.ApplyResources(CbMsgAll, "CbMsgAll");
             CbMsgAll.Name = "CbMsgAll";
-            CbMsgAll.Size = new Size(112, 19);
-            CbMsgAll.TabIndex = 0;
             CbMsgAll.Tag = "0";
-            CbMsgAll.Text = "Все сообщения";
+            TtHint.SetToolTip(CbMsgAll, resources.GetString("CbMsgAll.ToolTip"));
             CbMsgAll.UseVisualStyleBackColor = true;
             CbMsgAll.CheckedChanged += Cb_CheckedChanged;
             // 
             // BuCheckUpdates
             // 
-            BuCheckUpdates.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            BuCheckUpdates.Location = new Point(143, 71);
+            resources.ApplyResources(BuCheckUpdates, "BuCheckUpdates");
             BuCheckUpdates.Name = "BuCheckUpdates";
-            BuCheckUpdates.Size = new Size(154, 23);
-            BuCheckUpdates.TabIndex = 5;
-            BuCheckUpdates.Text = "Проверить обновления";
+            TtHint.SetToolTip(BuCheckUpdates, resources.GetString("BuCheckUpdates.ToolTip"));
             BuCheckUpdates.UseVisualStyleBackColor = true;
             BuCheckUpdates.Click += BuCheckUpdates_Click;
             // 
             // CbHideOnStart
             // 
-            CbHideOnStart.AutoSize = true;
-            CbHideOnStart.Location = new Point(6, 22);
+            resources.ApplyResources(CbHideOnStart, "CbHideOnStart");
             CbHideOnStart.Name = "CbHideOnStart";
-            CbHideOnStart.Size = new Size(148, 19);
-            CbHideOnStart.TabIndex = 6;
             CbHideOnStart.Tag = "20";
-            CbHideOnStart.Text = "Скрывать при запуске";
+            TtHint.SetToolTip(CbHideOnStart, resources.GetString("CbHideOnStart.ToolTip"));
             CbHideOnStart.UseVisualStyleBackColor = true;
             CbHideOnStart.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbHideToTray
             // 
-            CbHideToTray.AutoSize = true;
-            CbHideToTray.Location = new Point(160, 22);
+            resources.ApplyResources(CbHideToTray, "CbHideToTray");
             CbHideToTray.Name = "CbHideToTray";
-            CbHideToTray.Size = new Size(60, 19);
-            CbHideToTray.TabIndex = 7;
             CbHideToTray.Tag = "21";
-            CbHideToTray.Text = "в трей";
+            TtHint.SetToolTip(CbHideToTray, resources.GetString("CbHideToTray.ToolTip"));
             CbHideToTray.UseVisualStyleBackColor = true;
             CbHideToTray.CheckedChanged += Cb_CheckedChanged;
             // 
             // CbStartWithSteamVR
             // 
-            CbStartWithSteamVR.AutoSize = true;
-            CbStartWithSteamVR.Location = new Point(6, 47);
+            resources.ApplyResources(CbStartWithSteamVR, "CbStartWithSteamVR");
             CbStartWithSteamVR.Name = "CbStartWithSteamVR";
-            CbStartWithSteamVR.Size = new Size(188, 19);
-            CbStartWithSteamVR.TabIndex = 8;
             CbStartWithSteamVR.Tag = "22";
-            CbStartWithSteamVR.Text = "Запускать вместе со SteamVR";
+            TtHint.SetToolTip(CbStartWithSteamVR, resources.GetString("CbStartWithSteamVR.ToolTip"));
             CbStartWithSteamVR.UseVisualStyleBackColor = true;
             CbStartWithSteamVR.CheckedChanged += Cb_CheckedChanged;
             // 
             // groupBox4
             // 
+            resources.ApplyResources(groupBox4, "groupBox4");
+            groupBox4.Controls.Add(BuVrL);
+            groupBox4.Controls.Add(BuVrR);
             groupBox4.Controls.Add(LlOpenGithub);
             groupBox4.Controls.Add(BuCheckUpdates);
             groupBox4.Controls.Add(CbStartWithSteamVR);
             groupBox4.Controls.Add(CbHideOnStart);
             groupBox4.Controls.Add(BuDonate);
-            groupBox4.Controls.Add(BuVrConnected);
+            groupBox4.Controls.Add(BuVrStatus);
             groupBox4.Controls.Add(CbHideToTray);
-            groupBox4.Location = new Point(12, 12);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(303, 100);
-            groupBox4.TabIndex = 9;
             groupBox4.TabStop = false;
-            groupBox4.Text = "Настройки программы";
+            TtHint.SetToolTip(groupBox4, resources.GetString("groupBox4.ToolTip"));
+            // 
+            // BuVrL
+            // 
+            resources.ApplyResources(BuVrL, "BuVrL");
+            BuVrL.BackColor = Color.LightPink;
+            BuVrL.Name = "BuVrL";
+            BuVrL.TabStop = false;
+            TtHint.SetToolTip(BuVrL, resources.GetString("BuVrL.ToolTip"));
+            BuVrL.UseVisualStyleBackColor = false;
+            // 
+            // BuVrR
+            // 
+            resources.ApplyResources(BuVrR, "BuVrR");
+            BuVrR.BackColor = Color.LightPink;
+            BuVrR.Name = "BuVrR";
+            BuVrR.TabStop = false;
+            TtHint.SetToolTip(BuVrR, resources.GetString("BuVrR.ToolTip"));
+            BuVrR.UseVisualStyleBackColor = false;
             // 
             // LlOpenGithub
             // 
-            LlOpenGithub.AutoSize = true;
-            LlOpenGithub.Location = new Point(6, 75);
+            resources.ApplyResources(LlOpenGithub, "LlOpenGithub");
             LlOpenGithub.Name = "LlOpenGithub";
-            LlOpenGithub.Size = new Size(43, 15);
-            LlOpenGithub.TabIndex = 9;
             LlOpenGithub.TabStop = true;
-            LlOpenGithub.Text = "Github";
+            TtHint.SetToolTip(LlOpenGithub, resources.GetString("LlOpenGithub.ToolTip"));
             LlOpenGithub.LinkClicked += LlOpenGithub_LinkClicked;
+            // 
+            // TiTwCheckExpired
+            // 
+            TiTwCheckExpired.Interval = 1000;
+            TiTwCheckExpired.Tick += TiTwCheckExpired_Tick;
+            // 
+            // TimerCheckForVR
+            // 
+            TimerCheckForVR.Interval = 5000;
+            TimerCheckForVR.Tick += TimerCheckForVR_Tick;
+            // 
+            // TimerCheckForControllers
+            // 
+            TimerCheckForControllers.Interval = 1000;
+            TimerCheckForControllers.Tick += TimerCheckForControllers_Tick;
+            // 
+            // NiMain
+            // 
+            resources.ApplyResources(NiMain, "NiMain");
+            NiMain.Click += NiMain_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(627, 320);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "Form1";
-            Text = "SteamVrChatFeedback by GoodVrGames aka alextrof94";
+            TtHint.SetToolTip(this, resources.GetString("$this.ToolTip"));
             Shown += Form1_Shown;
+            Resize += Form1_Resize;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)TbHapticForce).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
@@ -491,7 +474,7 @@
         #endregion
 
         private Button BuDonate;
-        private Button BuVrConnected;
+        private Button BuVrStatus;
         private GroupBox groupBox1;
         private Label label1;
         private TextBox TbTwChannelName;
@@ -499,9 +482,9 @@
         private GroupBox groupBox2;
         private ComboBox CbController;
         private Label label2;
-        private Button BuTestVibro;
+        private Button BuTestHaptic;
         private Button BuOpenJson;
-        private ComboBox CbVibroName;
+        private ComboBox CbHapticAnimations;
         private Label label3;
         private GroupBox groupBox3;
         private CheckBox CbMsgSubmode;
@@ -525,5 +508,14 @@
         private CheckBox CbStartWithSteamVR;
         private GroupBox groupBox4;
         private LinkLabel LlOpenGithub;
+        private System.Windows.Forms.Timer TiTwCheckExpired;
+        private Label label4;
+        private TrackBar TbHapticForce;
+        private ToolTip TtHint;
+        private System.Windows.Forms.Timer TimerCheckForVR;
+        private System.Windows.Forms.Timer TimerCheckForControllers;
+        private Button BuVrR;
+        private Button BuVrL;
+        private NotifyIcon NiMain;
     }
 }

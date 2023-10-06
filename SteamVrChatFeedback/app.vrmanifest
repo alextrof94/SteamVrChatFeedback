@@ -1,0 +1,21 @@
+{
+	"applications": [
+		{
+			"app_key": "SteamVrChatFeedback",
+			"launch_type": "binary",
+			"binary_path_windows": "SteamVrChatFeedback.exe",
+			"is_dashboard_overlay": true,
+
+			"strings": {
+				"en_us": {
+					"name": "SteamVrChatFeedback",
+					"description": "Makes controllers vibrate when chat messages are received"
+				},
+				"ru_ru": {
+					"name": "SteamVrChatFeedback",
+					"description": "Заставляет контроллеры вибрировать при получении сообщений в чате"
+				}
+			}
+		}
+	]
+}

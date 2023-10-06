@@ -1,0 +1,287 @@
+[
+  {
+    "name": "bz-bz bz-bz bz-bz",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "bz bz bzz",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 200,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "bzzzzz",
+    "hapticFrames": [
+      {
+        "duration": 500,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "pulse-pulse-pulse",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "long-short-long",
+    "hapticFrames": [
+      {
+        "duration": 300,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 300,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "quick-quick-quick",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 50
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 50
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 50
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "buzz-buzz-buzz",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "short-long-short",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 300,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "rhythmical heartbeat",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 200,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 200,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "fluttering wings",
+    "hapticFrames": [
+      {
+        "duration": 50,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 150,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 200,
+        "delayAfterPlay": 100
+      },
+      {
+        "duration": 50,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "electric surge",
+    "hapticFrames": [
+      {
+        "duration": 50,
+        "delayAfterPlay": 50
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 50
+      },
+      {
+        "duration": 200,
+        "delayAfterPlay": 50
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 50
+      },
+      {
+        "duration": 50,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "rolling thunder",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 200,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 300,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 200,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  },
+  {
+    "name": "morse code",
+    "hapticFrames": [
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 300,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 300,
+        "delayAfterPlay": 200
+      },
+      {
+        "duration": 100,
+        "delayAfterPlay": 0
+      }
+    ]
+  }
+]

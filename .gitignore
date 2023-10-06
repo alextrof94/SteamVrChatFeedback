@@ -1,3 +1,4 @@
 .vs/*
 SteamVrChatFeedback/bin/*
 SteamVrChatFeedback/obj/*
+SteamVrChatFeedback/Secrets.cs

@@ -85,24 +85,36 @@ namespace SteamVrChatFeedback.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int VibroController {
+        public int Controller {
             get {
-                return ((int)(this["VibroController"]));
+                return ((int)(this["Controller"]));
             }
             set {
-                this["VibroController"] = value;
+                this["Controller"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string VibroName {
+        public string HapticAnimationName {
             get {
-                return ((string)(this["VibroName"]));
+                return ((string)(this["HapticAnimationName"]));
             }
             set {
-                this["VibroName"] = value;
+                this["HapticAnimationName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255")]
+        public int HapticForce {
+            get {
+                return ((int)(this["HapticForce"]));
+            }
+            set {
+                this["HapticForce"] = value;
             }
         }
     }

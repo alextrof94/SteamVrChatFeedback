@@ -14,7 +14,12 @@ namespace SteamVrChatFeedback
         public string Name { get; set; } = "bz";
 
         [JsonProperty(PropertyName = "hapticFrames")]
-        public List<HapticFrame> HapticFrames { get; set; } = new List<HapticFrame>() { new HapticFrame() };
+        public List<HapticFrame> HapticFrames { get; set; } = new List<HapticFrame>();
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     [Serializable]
