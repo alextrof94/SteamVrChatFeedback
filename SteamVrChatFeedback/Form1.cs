@@ -355,11 +355,6 @@ namespace SteamVrChatFeedback
 
             BuVrL.BackColor = (LeftHandId == 0 || LeftHandId > 255) ? Color.LightPink : Color.LightGreen;
             BuVrR.BackColor = (RightHandId == 0 || RightHandId > 255) ? Color.LightPink : Color.LightGreen;
-
-            if (LeftHandId == 0 || LeftHandId > 255 || RightHandId == 0 || RightHandId > 255)
-                TimerCheckForControllers.Enabled = true;
-            else
-                TimerCheckForControllers.Enabled = false;
         }
 
 

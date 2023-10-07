@@ -160,6 +160,9 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Vibration</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Feedback Settings</value>
+  </data>
   <data name="BuOpenWhiteList.Text" xml:space="preserve">
     <value>White List</value>
   </data>
@@ -232,9 +235,6 @@
   <data name="CbMsgAll.Text" xml:space="preserve">
     <value>All messages</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Feedback Settings</value>
-  </data>
   <data name="BuCheckUpdates.Text" xml:space="preserve">
     <value>Check for updates</value>
   </data>
@@ -256,11 +256,11 @@
   <data name="CbStartWithSteamVR.Text" xml:space="preserve">
     <value>Start with SteamVR</value>
   </data>
-  <data name="LlOpenGithub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 75</value>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>App Settings</value>
+  </data>
+  <data name="LlOpenGithub.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 75</value>
   </data>
   <data name="NiMain.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

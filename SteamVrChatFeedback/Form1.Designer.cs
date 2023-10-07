@@ -178,6 +178,7 @@
             // CbHapticAnimations
             // 
             resources.ApplyResources(CbHapticAnimations, "CbHapticAnimations");
+            CbHapticAnimations.DropDownStyle = ComboBoxStyle.DropDownList;
             CbHapticAnimations.FormattingEnabled = true;
             CbHapticAnimations.Name = "CbHapticAnimations";
             TtHint.SetToolTip(CbHapticAnimations, resources.GetString("CbHapticAnimations.ToolTip"));
@@ -192,6 +193,7 @@
             // CbController
             // 
             resources.ApplyResources(CbController, "CbController");
+            CbController.DropDownStyle = ComboBoxStyle.DropDownList;
             CbController.FormattingEnabled = true;
             CbController.Name = "CbController";
             TtHint.SetToolTip(CbController, resources.GetString("CbController.ToolTip"));
