@@ -17,7 +17,7 @@ namespace SteamVrChatFeedback
 {
     public partial class Form1 : Form
     {
-        readonly static string AppVersion = "1.0";
+        readonly static string AppVersion = "1.0.1";
         readonly static string AppName = "SteamVrChatFeedback";
         readonly static string TlAddressCheckForUpdates = "https://turnlive.ru/apps/check_updates.php";
         readonly string PathToExe = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\";
@@ -121,6 +121,12 @@ namespace SteamVrChatFeedback
                 if (checkBox != null)
                     checkBox.Checked = (flags[i] == '1');
             }
+            if (!flags.Contains("1"))
+            {
+                CbMsgAll.Checked = true;
+                SaveCbs(CbMsgAll, int.Parse(CbMsgAll.Tag.ToString()));
+            }
+
             AppLoaded = true;
 
             if (CbHideOnStart.Checked)
@@ -239,22 +245,35 @@ namespace SteamVrChatFeedback
             var cb = (CheckBox)sender;
             var cbIndex = int.Parse((string)cb.Tag);
 
+            if (cb.Name == "CbStartWithSteamVR")
+            {
+                if (!VrStarted)
+                {
+                    if (CbStartWithSteamVR.Checked)
+                        CbStartWithSteamVR.Checked = false;
+                    return;
+                }
+                TryToSetAutorun();
+            }
+
+            SaveCbs(cb, cbIndex);
+
+            CbsSetEnable();
+        }
+
+        private void SaveCbs(CheckBox cb, int cbIndex)
+        {
             string flags = Properties.Settings.Default.Flags;
             while (flags.Length <= 30)
                 flags += "0";
-
 
             StringBuilder flagsSb = new StringBuilder(flags);
             flagsSb[cbIndex] = (cb.Checked) ? '1' : '0';
 
             Properties.Settings.Default.Flags = flagsSb.ToString();
             Properties.Settings.Default.Save();
-
-            CbsSetEnable();
-
-            if (cb.Name == "CbStartWithSteamVR")
-                TryToSetAutorun();
         }
+
         private void NiMain_Click(object sender, EventArgs e)
         {
             Show();
@@ -265,14 +284,6 @@ namespace SteamVrChatFeedback
 
         private void TryToSetAutorun()
         {
-            if (!AppLoaded)
-                return;
-            if (!VrStarted)
-            {
-                if (CbStartWithSteamVR.Checked)
-                    CbStartWithSteamVR.Checked = false;
-                return;
-            }
             string appKey = Program.uriSchemeConfiguration.GetValueOrDefault("AppName");
             if (CbStartWithSteamVR.Checked)
             {
