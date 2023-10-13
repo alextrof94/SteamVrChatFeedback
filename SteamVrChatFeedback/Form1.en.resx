@@ -136,6 +136,9 @@
   <data name="BuTwConnect.Text" xml:space="preserve">
     <value>Connect</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Vibration</value>
+  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 15</value>
   </data>
@@ -156,9 +159,6 @@
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Controller:</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Vibration</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Feedback Settings</value>
@@ -235,9 +235,6 @@
   <data name="CbMsgAll.Text" xml:space="preserve">
     <value>All messages</value>
   </data>
-  <data name="BuCheckUpdates.Text" xml:space="preserve">
-    <value>Check for updates</value>
-  </data>
   <data name="CbHideOnStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 19</value>
   </data>
@@ -258,6 +255,9 @@
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>App Settings</value>
+  </data>
+  <data name="BuVrL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 18</value>
   </data>
   <data name="LlOpenGithub.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 75</value>

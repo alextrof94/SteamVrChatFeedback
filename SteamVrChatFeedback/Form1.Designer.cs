@@ -60,7 +60,6 @@
             CbMsgMod = new CheckBox();
             CbMsgCmds = new CheckBox();
             CbMsgAll = new CheckBox();
-            BuCheckUpdates = new Button();
             CbHideOnStart = new CheckBox();
             CbHideToTray = new CheckBox();
             CbStartWithSteamVR = new CheckBox();
@@ -350,14 +349,6 @@
             CbMsgAll.UseVisualStyleBackColor = true;
             CbMsgAll.CheckedChanged += Cb_CheckedChanged;
             // 
-            // BuCheckUpdates
-            // 
-            resources.ApplyResources(BuCheckUpdates, "BuCheckUpdates");
-            BuCheckUpdates.Name = "BuCheckUpdates";
-            TtHint.SetToolTip(BuCheckUpdates, resources.GetString("BuCheckUpdates.ToolTip"));
-            BuCheckUpdates.UseVisualStyleBackColor = true;
-            BuCheckUpdates.Click += BuCheckUpdates_Click;
-            // 
             // CbHideOnStart
             // 
             resources.ApplyResources(CbHideOnStart, "CbHideOnStart");
@@ -391,7 +382,6 @@
             groupBox4.Controls.Add(BuVrL);
             groupBox4.Controls.Add(BuVrR);
             groupBox4.Controls.Add(LlOpenGithub);
-            groupBox4.Controls.Add(BuCheckUpdates);
             groupBox4.Controls.Add(CbStartWithSteamVR);
             groupBox4.Controls.Add(CbHideOnStart);
             groupBox4.Controls.Add(BuDonate);
@@ -504,7 +494,6 @@
         private Button BuOpenIgnoreList;
         private CheckBox CbMsgWhiteList;
         private CheckBox CbMsgVip;
-        private Button BuCheckUpdates;
         private CheckBox CbHideOnStart;
         private CheckBox CbHideToTray;
         private CheckBox CbStartWithSteamVR;

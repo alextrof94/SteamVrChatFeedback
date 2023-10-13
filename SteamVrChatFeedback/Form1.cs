@@ -17,9 +17,8 @@ namespace SteamVrChatFeedback
 {
     public partial class Form1 : Form
     {
-        readonly static string AppVersion = "1.0.1";
+        readonly static string AppVersion = "1.1.2";
         readonly static string AppName = "SteamVrChatFeedback";
-        readonly static string TlAddressCheckForUpdates = "https://turnlive.ru/apps/check_updates.php";
         readonly string PathToExe = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\";
         bool AppLoaded = false;
         string[] args;
@@ -156,30 +155,6 @@ namespace SteamVrChatFeedback
         private void LlOpenGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             OpenBrowser("https://github.com/alextrof94/SteamVrChatFeedback");
-        }
-
-        private void BuCheckUpdates_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string versionOnSiteData = DoGetRequest(TlAddressCheckForUpdates + "?appName=" + AppName);
-                if (string.IsNullOrEmpty(versionOnSiteData))
-                    throw new Exception(Translations.GetString("SiteCantBeReached"));
-                var versionOnSiteResp = JsonConvert.DeserializeObject<CheckForUpdateResponse>(versionOnSiteData);
-                if (versionOnSiteResp.Version != AppVersion)
-                {
-                    if (MessageBox.Show($"{Translations.GetString("NewVersion")} {versionOnSiteResp.Version}", AppName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        OpenBrowser(versionOnSiteResp.Link);
-                }
-                else
-                {
-                    MessageBox.Show($"{Translations.GetString("AlreadyUpToDate")}", AppName);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, AppName);
-            }
         }
 
         private string DoGetRequest(string url)
