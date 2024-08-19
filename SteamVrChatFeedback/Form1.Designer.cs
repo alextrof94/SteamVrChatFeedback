@@ -449,6 +449,7 @@
             MaximizeBox = false;
             Name = "Form1";
             TtHint.SetToolTip(this, resources.GetString("$this.ToolTip"));
+            FormClosing += Form1_FormClosing;
             Shown += Form1_Shown;
             Resize += Form1_Resize;
             groupBox1.ResumeLayout(false);

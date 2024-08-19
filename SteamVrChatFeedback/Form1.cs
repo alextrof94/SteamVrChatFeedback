@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Timers;
 using System.Web;
@@ -17,7 +18,7 @@ namespace SteamVrChatFeedback
 {
     public partial class Form1 : Form
     {
-        readonly static string AppVersion = "1.1.2";
+        readonly static string AppVersion = "1.1.3";
         readonly static string AppName = "SteamVrChatFeedback";
         readonly string PathToExe = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\";
         bool AppLoaded = false;
@@ -596,6 +597,12 @@ namespace SteamVrChatFeedback
                 VrStarted = true;
                 BuVrStatus.BackColor = Color.LightGreen;
                 CbStartWithSteamVR.Enabled = true;
+
+                Task t = new(() =>
+                {
+                    CheckingForExitSteamVr();
+                });
+                t.Start();
             }
             else
             {
@@ -603,6 +610,40 @@ namespace SteamVrChatFeedback
                 BuVrStatus.BackColor = Color.LightPink;
                 CbStartWithSteamVR.Enabled = false;
                 TimerCheckForVR.Enabled = true;
+            }
+        }
+
+        private void CheckingForExitSteamVr()
+        {
+            while (VrStarted)
+            {
+                var vrEvents = new List<VREvent_t>();
+                var vrEvent = new VREvent_t();
+                uint eventSize = (uint)Marshal.SizeOf(vrEvent);
+                try
+                {
+                    while (OpenVR.System.PollNextEvent(ref vrEvent, eventSize))
+                    {
+                        vrEvents.Add(vrEvent);
+                    }
+                }
+                catch
+                {
+                }
+
+                foreach (var e in vrEvents)
+                {
+                    if ((EVREventType)e.eventType == EVREventType.VREvent_Quit)
+                    {
+                        OpenVR.System.AcknowledgeQuit_Exiting();
+                        VrStarted = false;
+                        this.Invoke(new Action(() =>
+                        {
+                            this.Close();
+                        }));
+                    }
+                }
+                Thread.Sleep(100);
             }
         }
 
@@ -677,6 +718,13 @@ namespace SteamVrChatFeedback
                     ShowInTaskbar = false;
                 }
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            NiMain.Visible = false;
+            NiMain.Dispose();
+            OpenVR.Shutdown();
         }
     }
 }
